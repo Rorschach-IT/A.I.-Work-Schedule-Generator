@@ -6,7 +6,49 @@
         xmlns:local="clr-namespace:GeneticAlgorithm"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <!--<Window.Resources>
+    </Window.Resources>-->
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+        </Grid.RowDefinitions>
 
+        <TextBlock Grid.Row="0" Text="Work Schedule" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"></TextBlock>
+        <ListView ItemsSource="{Binding WorkSchedules}" Margin="10" Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date}" Width="150" />
+                    <GridViewColumn Header="Day" DisplayMemberBinding="{Binding DayOfWeek}" Width="120" />
+                    <GridViewColumn Header="Change ID" DisplayMemberBinding="{Binding ChangeId}" Width="120" />
+                    <GridViewColumn Header="Client Counter" DisplayMemberBinding="{Binding ClientCounter}" Width="150" />
+                    <GridViewColumn Header="Employees" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <ItemsControl ItemsSource="{Binding EmployeeId}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border Background="LightGray"   Margin="2" Padding="4">
+                                                <TextBlock Text="{Binding}" />
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel Orientation="Horizontal"/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                </ItemsControl>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock x:Name="lblMessageTest" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"></TextBlock>
     </Grid>
 </Window>
