@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using GeneticAlgorithm.ViewModel;
 
 namespace GeneticAlgorithm
 {
@@ -10,6 +11,9 @@ namespace GeneticAlgorithm
         public MainWindow()
         {
             InitializeComponent();
+            var viewModel = new WorkScheduleViewModel();  // Create an instance of WorkScheduleViewModel
+            this.DataContext = viewModel;  // Set DataContext to the ViewModel
+            viewModel.LoadWorkScheduleData();  // Load the data
         }
     }
 }

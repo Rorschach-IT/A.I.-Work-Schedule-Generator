@@ -21,7 +21,7 @@ namespace GeneticAlgorithm.ViewModel
 
         public void LoadWorkScheduleData()
         {
-            string fileName = "../../../Data/WorkScheduleData.json";
+            string fileName = "../../../Data/WorkSchedule.json";
 
             try
             {

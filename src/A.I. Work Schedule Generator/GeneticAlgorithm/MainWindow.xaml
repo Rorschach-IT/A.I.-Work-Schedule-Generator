@@ -3,26 +3,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GeneticAlgorithm"
+        xmlns:local="clr-namespace:GeneticAlgorithm" 
+        xmlns:viewmodel="clr-namespace:GeneticAlgorithm.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <!--<Window.Resources>
-    </Window.Resources>-->
+        Title="MainWindow" Height="auto" Width="820">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-
-        <TextBlock Grid.Row="0" Text="Work Schedule" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"></TextBlock>
-        <ListView ItemsSource="{Binding WorkSchedules}" Margin="10" Grid.Row="1">
+        
+        <TextBlock Grid.Row="0" Text="Work Schedule" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"/>
+        <ListView ItemsSource="{Binding WorkSchedules}" Margin="5" Grid.Row="1">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date}" Width="150" />
+                    <GridViewColumn Header="Date" DisplayMemberBinding="{Binding FormattedDate}" Width="150" />
                     <GridViewColumn Header="Day" DisplayMemberBinding="{Binding DayOfWeek}" Width="120" />
                     <GridViewColumn Header="Change ID" DisplayMemberBinding="{Binding ChangeId}" Width="120" />
                     <GridViewColumn Header="Client Counter" DisplayMemberBinding="{Binding ClientCounter}" Width="150" />
@@ -32,7 +27,7 @@
                                 <ItemsControl ItemsSource="{Binding EmployeeId}">
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate>
-                                            <Border Background="LightGray"   Margin="2" Padding="4">
+                                            <Border Background="LightGray" Margin="2" Padding="4">
                                                 <TextBlock Text="{Binding}" />
                                             </Border>
                                         </DataTemplate>
@@ -49,6 +44,5 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBlock x:Name="lblMessageTest" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"></TextBlock>
     </Grid>
 </Window>

@@ -1,13 +1,24 @@
-﻿namespace GeneticAlgorithm.Model
+﻿using System.Text.Json.Serialization;
+using GeneticAlgorithm.ExternalClasses;
+
+namespace GeneticAlgorithm.Model
 {
     public class WorkScheduleModel
     {
-        public DateTime Date { get; set; }
+        private DateTime _date;
+
+        [JsonConverter(typeof(CustomDateTimeConverter))]
+        public DateTime Date
+        {
+            get => _date;
+            set => _date = value;
+        }
+
+        public string FormattedDate => Date.ToString("yyyy-MM-dd");
+
         public string DayOfWeek => Date.DayOfWeek.ToString();
         public string? ChangeId { get; set; }
-        public int[]? EmployeeId { get; set; }
-        //public required string Name { get; set; }
-        //public required string LastName { get; set; }
+        public string[]? EmployeeId { get; set; }
         public string? ClientCounter { get; set; }
     }
 }
