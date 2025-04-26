@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 using GeneticAlgorithm.ViewModel;
 
 namespace GeneticAlgorithm
@@ -11,9 +12,43 @@ namespace GeneticAlgorithm
         public MainWindow()
         {
             InitializeComponent();
-            var viewModel = new WorkScheduleViewModel();  // Create an instance of WorkScheduleViewModel
-            this.DataContext = viewModel;  // Set DataContext to the ViewModel
-            viewModel.LoadWorkScheduleData();  // Load the data
+
+            Loaded += (s, e) => Window_SizeChanged(null, null);
+
+            StyleProperty.OverrideMetadata(typeof(Window), new FrameworkPropertyMetadata
+            {
+                DefaultValue = FindResource(typeof(Window))
+            });
+
+            var viewModel = new WorkScheduleViewModel();
+            DataContext = viewModel;
+
+            viewModel.LoadWorkScheduleData();
+        }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (WorkScheduleListView.View is GridView gridView)
+            {
+                // Adjust width for padding and scrollbar
+                double totalWidth = WorkScheduleListView.ActualWidth - 35;
+
+                if (gridView.Columns.Count == 6)
+                {
+                    gridView.Columns[0].Width = totalWidth * 0.20; // Date
+                    gridView.Columns[1].Width = totalWidth * 0.20; // Day
+                    gridView.Columns[2].Width = totalWidth * 0.15; // Change ID
+                    gridView.Columns[3].Width = totalWidth * 0.15; // Client Counter
+                    gridView.Columns[4].Width = totalWidth * 0.15; // Employees
+                    gridView.Columns[5].Width = totalWidth * 0.15; // Employees Counter
+                }
+            }
+        }
+
+        private void OpenNewTab(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new Prediction();
+            newWindow.Show();
         }
     }
 }

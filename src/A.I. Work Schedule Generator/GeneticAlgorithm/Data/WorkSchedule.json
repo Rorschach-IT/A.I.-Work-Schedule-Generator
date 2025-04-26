@@ -48,7 +48,7 @@
         "ClientCounter": "77"
     },
     {
-        "Date": "2024-04-04",
+        "Date": "2024-04-03",
         "ChangeId": "3",
         "EmployeeId": ["6", "7"],
         "ClientCounter": "45"
@@ -66,7 +66,7 @@
         "ClientCounter": "66"
     },
     {
-        "Date": "2024-04-05",
+        "Date": "2024-04-04",
         "ChangeId": "3",
         "EmployeeId": ["6", "7"],
         "ClientCounter": "41"
@@ -78,31 +78,31 @@
         "ClientCounter": "33"
     },
     {
-        "Date": "2024-04-06",
+        "Date": "2024-04-05",
         "ChangeId": "2",
         "EmployeeId": ["3", "4", "5"],
         "ClientCounter": "80"
     },
     {
-        "Date": "2024-04-06",
+        "Date": "2024-04-05",
         "ChangeId": "3",
         "EmployeeId": ["6", "7", "8"],
         "ClientCounter": "55"
     },
     {
-        "Date": "2024-04-07",
+        "Date": "2024-04-06",
         "ChangeId": "1",
         "EmployeeId": ["1", "2", "8"],
         "ClientCounter": "45"
     },
     {
-        "Date": "2024-04-07",
+        "Date": "2024-04-06",
         "ChangeId": "2",
         "EmployeeId": ["3", "4", "5"],
         "ClientCounter": "73"
     },
     {
-        "Date": "2024-04-08",
+        "Date": "2024-04-06",
         "ChangeId": "3",
         "EmployeeId": ["6", "7", "8"],
         "ClientCounter": "70"

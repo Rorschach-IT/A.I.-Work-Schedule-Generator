@@ -20,5 +20,6 @@ namespace GeneticAlgorithm.Model
         public string? ChangeId { get; set; }
         public string[]? EmployeeId { get; set; }
         public string? ClientCounter { get; set; }
+        public int EmployeeCounter => EmployeeId?.Length ?? 0;
     }
 }

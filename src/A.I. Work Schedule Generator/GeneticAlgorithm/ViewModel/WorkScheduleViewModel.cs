@@ -26,6 +26,7 @@ namespace GeneticAlgorithm.ViewModel
             try
             {
                 string jsonString = File.ReadAllText(fileName);
+
                 var schedules = JsonSerializer.Deserialize<List<WorkScheduleModel>>(jsonString);
 
                 if (schedules is not null)
