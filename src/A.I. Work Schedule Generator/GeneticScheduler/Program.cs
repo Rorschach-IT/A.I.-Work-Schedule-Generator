@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 
-namespace TestingOnConsole
+namespace GeneticScheduler
 {
     public class WorkSchedule
     {
@@ -19,7 +19,7 @@ namespace TestingOnConsole
         public string Date { get; set; }
         public string DayOfWeek => DateTime.Parse(Date).DayOfWeek.ToString();
         public string ChangeId { get; set; }
-        public int EmployeeIdCount { get; set; } = 0; // Default value is 0
+        public int EmployeeIdCount { get; set; } = 0;
     }
 
     internal class Program
@@ -61,7 +61,6 @@ namespace TestingOnConsole
 
             for (int i = 1; i <= workSchedules.Count; i++)
             {
-                // First day += 2 (every Sunday is skipped)
                 if (i == 1)
                 {
                     addedDays = 2;
@@ -74,7 +73,6 @@ namespace TestingOnConsole
                 {
                     Date = nextDay,
                     ChangeId = changeId
-                    // EmployeeIdCount remains default (0)
                 };
 
                 workSchedulePredictions.Add(prediction);
@@ -85,39 +83,27 @@ namespace TestingOnConsole
                 }
             }
 
-            /*
-                Genetic algorithm implementation
-            */
+            // Przygotuj dane klientowskie dla algorytmu
+            var clientCounts = workSchedules.Select(ws => int.Parse(ws.ClientCounter)).ToList();
+            var daysOfWeek = workSchedules.Select(ws => ws.DayOfWeek).ToList();
 
-            List<int> employeeCounts = new List<int>();
+            var geneticScheduler = new GeneticScheduler();
+            var optimizedEmployeeCounts = geneticScheduler.Optimize(clientCounts, daysOfWeek);
 
-            foreach (var schedule in workSchedules)
+            // Podstaw wyniki do prognozy
+            for (int i = 0; i < workSchedulePredictions.Count; i++)
             {
-                int employeeIdCount = schedule.EmployeeIdCount;
-                employeeCounts.Add(employeeIdCount);
+                workSchedulePredictions[i].EmployeeIdCount = optimizedEmployeeCounts[i];
             }
 
-
-
-
-            // Displaying the initial collection
-            Console.WriteLine("Date       DayOfWeek ChangeId ClientCounter  EmployeeIdCount");
-            foreach (var schedule in workSchedules)
-            {
-                Console.WriteLine($"{schedule.Date} {schedule.DayOfWeek,-10} {schedule.ChangeId,-8} {schedule.ClientCounter,-13} {schedule.EmployeeIdCount}");
-            }
-
-            Console.WriteLine("\n-------------------------------");
-            Console.WriteLine("Next section:");
-            Console.WriteLine("-------------------------------\n");
-
-            // Displaying the prediction collection
+            // Wyświetl wynik
+            Console.WriteLine("\nPrediction for next week:");
             Console.WriteLine("Date       DayOfWeek ChangeId EmployeeIdCount");
             foreach (var prediction in workSchedulePredictions)
             {
                 Console.WriteLine($"{prediction.Date} {prediction.DayOfWeek,-10} {prediction.ChangeId,-8} {prediction.EmployeeIdCount}");
             }
-
         }
     }
 }
+
