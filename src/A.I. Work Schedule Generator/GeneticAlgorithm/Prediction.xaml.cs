@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using GeneticAlgorithm.ViewModel;
 
 namespace GeneticAlgorithm
 {
@@ -13,6 +14,14 @@ namespace GeneticAlgorithm
             InitializeComponent();
 
             Loaded += (s, e) => Window_SizeChanged(null, null);
+
+            var previousModel = new WorkScheduleViewModel();
+            previousModel.LoadWorkScheduleData();
+
+            var viewModel = new WorkSchedulePredictionViewModel();
+            DataContext = viewModel;
+
+            viewModel.LoadWorkSchedulePredictionData(previousModel.WorkSchedules);
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)

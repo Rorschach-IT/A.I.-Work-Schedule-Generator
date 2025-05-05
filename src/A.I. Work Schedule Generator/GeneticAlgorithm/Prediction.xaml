@@ -57,35 +57,16 @@
 
         <ListView x:Name="WorkScheduleListView"
               Grid.ColumnSpan="3" 
-              ItemsSource="{Binding WorkSchedules}" 
+              ItemsSource="{Binding WorkSchedulesPredictions}" 
               Margin="15"
               Grid.Row="1" 
               Width="auto">
             <ListView.View>
                 <GridView ColumnHeaderContainerStyle="{StaticResource CustomGridViewColumnHeaderStyle}">
-                    <GridViewColumn Header="Date" DisplayMemberBinding="{Binding FormattedDate}"/>
+                    <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date}"/>
                     <GridViewColumn Header="Day" DisplayMemberBinding="{Binding DayOfWeek}"/>
                     <GridViewColumn Header="Change ID" DisplayMemberBinding="{Binding ChangeId}"/>
-                    <GridViewColumn Header="Employees Counter">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <ItemsControl ItemsSource="{Binding EmployeesId}">
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <Border Background="LightGray" Margin="2" Padding="4">
-                                                <TextBlock Text="{Binding}" />
-                                            </Border>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                    <ItemsControl.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <StackPanel Orientation="Horizontal"/>
-                                        </ItemsPanelTemplate>
-                                    </ItemsControl.ItemsPanel>
-                                </ItemsControl>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
+                    <GridViewColumn Header="Employees Counter" DisplayMemberBinding="{Binding EmployeeIdCount}"/>
                 </GridView>
             </ListView.View>
         </ListView>

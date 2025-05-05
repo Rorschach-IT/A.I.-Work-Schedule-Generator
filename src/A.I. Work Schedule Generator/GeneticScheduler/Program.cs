@@ -83,7 +83,6 @@ namespace GeneticScheduler
                 }
             }
 
-            // Przygotuj dane klientowskie dla algorytmu
             var clientCounts = workSchedules.Select(ws => int.Parse(ws.ClientCounter)).ToList();
             var daysOfWeek = workSchedules.Select(ws => ws.DayOfWeek).ToList();
 
