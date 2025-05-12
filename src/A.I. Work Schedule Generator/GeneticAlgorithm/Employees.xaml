@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Employees"
         Height="350" Width="auto"
-        SizeChanged="Window_SizeChanged">
+        SizeChanged="Window_SizeChanged"
+        Icon="/Icons/employees.ico">
     <Window.Resources>
         <Style x:Key="CustomGridViewColumnHeaderStyle" TargetType="GridViewColumnHeader">
             <Setter Property="FontWeight" Value="Bold"/>

@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:GeneticAlgorithm" 
         xmlns:viewmodel="clr-namespace:GeneticAlgorithm.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="910" Width="auto"
-        SizeChanged="Window_SizeChanged">
-
+        Title="Work Schedule" Height="910" Width="auto"
+        SizeChanged="Window_SizeChanged"
+        Icon="/Icons/main.ico">
     <Window.Resources>
         <Style x:Key="CustomGridViewColumnHeaderStyle" TargetType="GridViewColumnHeader">
             <Setter Property="FontWeight" Value="Bold"/>
