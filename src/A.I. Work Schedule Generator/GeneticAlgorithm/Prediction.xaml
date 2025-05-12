@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GeneticAlgorithm"
         mc:Ignorable="d"
         Title="Prediction"
-        Height="auto" Width="auto"
+        Height="700" Width="auto"
         SizeChanged="Window_SizeChanged">
     <Window.Resources>
         <Style x:Key="CustomGridViewColumnHeaderStyle" TargetType="GridViewColumnHeader">
@@ -29,7 +29,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" 
-               Text="Work Schedule" 
+               Text="Work Schedule prediction for next week" 
                VerticalAlignment="Center" 
                HorizontalAlignment="Center" 
                FontSize="30"

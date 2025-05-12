@@ -31,7 +31,7 @@
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter TargetName="border" 
                                         Property="Background" 
-                                        Value="#EDDCDC"/>
+                                        Value="#f7862f"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

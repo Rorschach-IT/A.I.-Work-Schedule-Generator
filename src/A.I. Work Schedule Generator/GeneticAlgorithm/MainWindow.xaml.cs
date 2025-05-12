@@ -50,5 +50,11 @@ namespace GeneticAlgorithm
             var newWindow = new Prediction();
             newWindow.Show();
         }
+
+        private void showEmployees(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new Employees();
+            newWindow.Show();
+        }
     }
 }

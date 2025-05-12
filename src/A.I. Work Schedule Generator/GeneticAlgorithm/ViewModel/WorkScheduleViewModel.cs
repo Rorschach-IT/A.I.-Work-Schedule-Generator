@@ -21,7 +21,7 @@ namespace GeneticAlgorithm.ViewModel
 
         public void LoadWorkScheduleData()
         {
-            string fileName = "../../../Data/WorkSchedule.json";
+            const string fileName = "../../../Data/WorkSchedule.json";
 
             try
             {
@@ -35,6 +35,11 @@ namespace GeneticAlgorithm.ViewModel
             catch (Exception ex) when (ex is FileNotFoundException or JsonException)
             {
                 throw new ApplicationException($"Failed to load work schedule data from {fileName}", ex);
+            }
+
+            if (WorkSchedules.Count == 0)
+            {
+                throw new Exception("No work schedule data found.");
             }
         }
     }
