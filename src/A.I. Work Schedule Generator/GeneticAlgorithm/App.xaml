@@ -23,7 +23,9 @@
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="1"
                                 CornerRadius="5"
-                                Padding="5">
+                                Padding="8"
+                                Margin="10 30 15 10"
+                                Cursor="Hand">
                             <ContentPresenter HorizontalAlignment="Center" 
                                               VerticalAlignment="Center"/>
                         </Border>

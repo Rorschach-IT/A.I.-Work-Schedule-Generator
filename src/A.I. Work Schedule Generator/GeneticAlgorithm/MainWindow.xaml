@@ -22,6 +22,7 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -38,34 +39,30 @@
 
         <Button Grid.Column="1" 
                 Grid.Row="0" 
-                Content="Show Employees" 
-                Margin="10 30 15 10"
-                Padding="10"
-                Cursor="Hand"
-                Width="150"
-                HorizontalAlignment="Right"
+                Content="Employees" 
                 Background="#9ed5d9"
                 Click="showEmployees"/>
 
         <Button Grid.Column="2" 
                 Grid.Row="0" 
+                Content="Employees preferences" 
+                Background="#f5e949"/>
+
+        <Button Grid.Column="3" 
+                Grid.Row="0" 
                 Content="Generate" 
-                Margin="10 30 15 10"
-                Padding="10"
-                Cursor="Hand"
-                Width="120"
-                HorizontalAlignment="Right"
                 Click="OpenNewTab"/>
 
         <ListView x:Name="WorkScheduleListView"
-                  Grid.ColumnSpan="3" 
+                  Grid.ColumnSpan="4" 
                   ItemsSource="{Binding WorkSchedules}" 
                   Margin="15"
                   Grid.Row="1" 
                   Width="auto">
             <ListView.View>
                 <GridView ColumnHeaderContainerStyle="{StaticResource CustomGridViewColumnHeaderStyle}">
-                    <GridViewColumn Header="Date" DisplayMemberBinding="{Binding FormattedDate}"/>
+                    <GridViewColumn Header="Date" 
+                                    DisplayMemberBinding="{Binding FormattedDate}"/>
                     <GridViewColumn Header="Day" DisplayMemberBinding="{Binding DayOfWeek}"/>
                     <GridViewColumn Header="Change ID" DisplayMemberBinding="{Binding ChangeId}"/>
                     <GridViewColumn Header="Client Counter" DisplayMemberBinding="{Binding ClientCounter}"/>

@@ -35,12 +35,12 @@ namespace GeneticAlgorithm
 
                 if (gridView.Columns.Count == 6)
                 {
-                    gridView.Columns[0].Width = totalWidth * 0.20; // Date
-                    gridView.Columns[1].Width = totalWidth * 0.20; // Day
-                    gridView.Columns[2].Width = totalWidth * 0.15; // Change ID
-                    gridView.Columns[3].Width = totalWidth * 0.15; // Client Counter
-                    gridView.Columns[4].Width = totalWidth * 0.15; // Employees
-                    gridView.Columns[5].Width = totalWidth * 0.15; // Employees Counter
+                    gridView.Columns[0].Width = totalWidth * 0.1; // Date
+                    gridView.Columns[1].Width = totalWidth * 0.1; // Day
+                    gridView.Columns[2].Width = totalWidth * 0.1; // Change ID
+                    gridView.Columns[3].Width = totalWidth * 0.1; // Client Counter
+                    gridView.Columns[4].Width = totalWidth * 0.5; // Employees
+                    gridView.Columns[5].Width = totalWidth * 0.1; // Employees Counter
                 }
             }
         }
