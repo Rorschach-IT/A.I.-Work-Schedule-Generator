@@ -69,7 +69,7 @@
                     <GridViewColumn Header="Employees">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <ItemsControl ItemsSource="{Binding EmployeeId}">
+                                <ItemsControl ItemsSource="{Binding Employees}">
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate>
                                             <Border Background="LightGray" Margin="2" Padding="4">
@@ -86,7 +86,7 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Employee Counter" DisplayMemberBinding="{Binding EmployeeCounter}"/>
+                    <GridViewColumn Header="Employees Counter" DisplayMemberBinding="{Binding EmployeeCounter}"/>
                 </GridView>
             </ListView.View>
         </ListView>

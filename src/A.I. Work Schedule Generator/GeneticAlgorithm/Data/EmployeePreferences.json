@@ -1,0 +1,14 @@
+[
+    {
+        "ChangeId": 1,
+        "EmployeeId": ["Anna Kowalska", "Jan Nowak"]
+    },
+    {
+        "ChangeId": 2,
+        "EmployeeId": ["Marta Wiśniewska", "Piotr Lewandowski", "Katarzyna Dąbrowska", "Tomasz Wójcik"]
+    },
+    {
+        "ChangeId": 3,
+        "EmployeeId": ["Agnieszka Kamińska", "Marek Zieliński"]
+    }
+]

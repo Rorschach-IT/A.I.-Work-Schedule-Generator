@@ -30,11 +30,11 @@ namespace GeneticAlgorithm
 
                 if (gridView.Columns.Count == 5)
                 {
-                    gridView.Columns[0].Width = totalWidth * 0.10; // ID
-                    gridView.Columns[1].Width = totalWidth * 0.20; // Name
-                    gridView.Columns[2].Width = totalWidth * 0.30; // Last name
-                    gridView.Columns[3].Width = totalWidth * 0.20; // Email
-                    gridView.Columns[4].Width = totalWidth * 0.20; // Phone number
+                    gridView.Columns[0].Width = totalWidth * 0.1; // ID
+                    gridView.Columns[1].Width = totalWidth * 0.15; // Name
+                    gridView.Columns[2].Width = totalWidth * 0.15; // Last name
+                    gridView.Columns[3].Width = totalWidth * 0.4; // Email
+                    gridView.Columns[4].Width = totalWidth * 0.2; // Phone number
                 }
             }
         }
