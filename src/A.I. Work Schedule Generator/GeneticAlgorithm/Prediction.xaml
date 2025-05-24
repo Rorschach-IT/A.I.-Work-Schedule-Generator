@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GeneticAlgorithm"
         mc:Ignorable="d"
         Title="Prediction"
-        Height="700" Width="auto"
+        Height="900" Width="auto"
         SizeChanged="Window_SizeChanged"
         Icon="/Icons/prediction.ico">
     <Window.Resources>
@@ -57,6 +57,26 @@
                     <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date}"/>
                     <GridViewColumn Header="Day" DisplayMemberBinding="{Binding DayOfWeek}"/>
                     <GridViewColumn Header="Change ID" DisplayMemberBinding="{Binding ChangeId}"/>
+                    <GridViewColumn Header="Employees">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <ItemsControl ItemsSource="{Binding Employees}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border Background="LightGray" Margin="2" Padding="4">
+                                                <TextBlock Text="{Binding}" />
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel Orientation="Horizontal"/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                </ItemsControl>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                     <GridViewColumn Header="Employees Counter" DisplayMemberBinding="{Binding EmployeeIdCount}"/>
                 </GridView>
             </ListView.View>

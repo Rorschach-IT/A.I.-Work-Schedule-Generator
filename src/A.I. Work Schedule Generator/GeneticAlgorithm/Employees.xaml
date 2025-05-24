@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GeneticAlgorithm"
         mc:Ignorable="d"
         Title="Employees"
-        Height="350" Width="900"
+        Height="420" Width="900"
         SizeChanged="Window_SizeChanged"
         Icon="/Icons/employees.ico">
     <Window.Resources>
@@ -24,16 +24,17 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" 
-            Text="Work Schedule" 
+            Text="Employees" 
             VerticalAlignment="Center" 
             HorizontalAlignment="Center" 
             FontSize="30"
             Margin="10 20 10 10"/>
 
         <ListView x:Name="EmployeeListView"
-           ItemsSource="{Binding Employees}" 
-           Margin="15"
-           Width="auto">
+                  Grid.Row="1"
+                  ItemsSource="{Binding Employees}" 
+                  Margin="15"
+                  Width="auto">
             <ListView.View>
                 <GridView ColumnHeaderContainerStyle="{StaticResource CustomGridViewColumnHeaderStyle}">
                     <GridViewColumn Header="ID" DisplayMemberBinding="{Binding EmployeeId}"/>

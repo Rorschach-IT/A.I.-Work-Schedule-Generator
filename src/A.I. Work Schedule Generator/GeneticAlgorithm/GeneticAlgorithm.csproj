@@ -12,6 +12,7 @@
     <None Remove="Icons\employees.ico" />
     <None Remove="Icons\main.ico" />
     <None Remove="Icons\prediction.ico" />
+    <None Remove="Icons\preferences.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +25,9 @@
     <Content Include="Icons\prediction.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+	  <Content Include="Icons\preferences.ico">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
   </ItemGroup>
 
 </Project>

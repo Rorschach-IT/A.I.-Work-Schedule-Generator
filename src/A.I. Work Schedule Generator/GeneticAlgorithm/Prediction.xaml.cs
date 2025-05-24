@@ -31,12 +31,13 @@ namespace GeneticAlgorithm
                 // Adjust width for padding and scrollbar
                 double totalWidth = WorkScheduleListView.ActualWidth - 35;
 
-                if (gridView.Columns.Count == 4)
+                if (gridView.Columns.Count == 5)
                 {
-                    gridView.Columns[0].Width = totalWidth * 0.30; // Date
-                    gridView.Columns[1].Width = totalWidth * 0.30; // Day
-                    gridView.Columns[2].Width = totalWidth * 0.20; // Change ID
-                    gridView.Columns[3].Width = totalWidth * 0.20; // Employees Counter
+                    gridView.Columns[0].Width = totalWidth * 0.15; // Date
+                    gridView.Columns[1].Width = totalWidth * 0.15; // Day
+                    gridView.Columns[2].Width = totalWidth * 0.10; // Change ID
+                    gridView.Columns[3].Width = totalWidth * 0.50; // Employees
+                    gridView.Columns[4].Width = totalWidth * 0.10; // Employees Counter
                 }
             }
         }

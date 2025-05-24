@@ -69,6 +69,64 @@ namespace GeneticAlgorithm.ViewModel
             {
                 throw new Exception("No data inside work schedules predictions");
             }
+
+            // [*]
+            var employeePreferences = new EmployeePreferencesViewModel();
+            employeePreferences.LoadEmployeePreferencesData();
+
+            if (!employeePreferences.EmployeePreferences.Any())
+                throw new Exception("No data inside work employees preferences");
+
+            // Employees and their availability
+            List<string> employees = new();
+            List<int> employeesUsed = new();
+
+            Dictionary<string, List<string>> availabilityPerDay = new()
+            {
+                { "Monday", new List<string>() },
+                { "Tuesday", new List<string>() },
+                { "Wednesday", new List<string>() },
+                { "Thursday", new List<string>() },
+                { "Friday", new List<string>() },
+                { "Saturday", new List<string>() }
+            };
+
+            foreach (var pref in employeePreferences.EmployeePreferences)
+            {
+                employees.Add(pref.Employee);
+                employeesUsed.Add(0);
+                availabilityPerDay["Monday"].Add(pref.Monday);
+                availabilityPerDay["Tuesday"].Add(pref.Tuesday);
+                availabilityPerDay["Wednesday"].Add(pref.Wednesday);
+                availabilityPerDay["Thursday"].Add(pref.Thursday);
+                availabilityPerDay["Friday"].Add(pref.Friday);
+                availabilityPerDay["Saturday"].Add(pref.Saturday);
+            }
+
+            foreach (var prediction in WorkSchedulesPredictions)
+            {
+                if (!availabilityPerDay.ContainsKey(prediction.DayOfWeek))
+                    continue;
+
+                var availability = availabilityPerDay[prediction.DayOfWeek];
+                int sum = 0;
+
+                for (int i = 0; i < employees.Count; i++)
+                {
+                    if (sum >= prediction.EmployeeIdCount)
+                        break;
+
+                    if (employeesUsed[i] >= 6)
+                        continue;
+
+                    if (availability[i] == prediction.ChangeId)
+                    {
+                        prediction.Employees.Add(employees[i]);
+                        employeesUsed[i]++;
+                        sum++;
+                    }
+                }
+            }
         }
     }
 }

@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GeneticAlgorithm"
         mc:Ignorable="d"
-        Title="EmployeesPreferences" Height="500" Width="900">
+        Title="EmployeesPreferences" 
+        Height="450" 
+        Width="900"
+        SizeChanged="Window_SizeChanged"
+        Icon="/Icons/preferences.ico">
     <Window.Resources>
         <Style x:Key="CustomGridViewColumnHeaderStyle" TargetType="GridViewColumnHeader">
             <Setter Property="FontWeight" Value="Bold"/>
