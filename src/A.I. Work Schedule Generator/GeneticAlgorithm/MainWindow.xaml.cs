@@ -56,5 +56,11 @@ namespace GeneticAlgorithm
             var newWindow = new Employees();
             newWindow.Show();
         }
+
+        private void showEmployeesPreferences(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new EmployeesPreferences();
+            newWindow.Show();
+        }
     }
 }

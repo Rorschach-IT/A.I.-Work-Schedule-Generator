@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GeneticAlgorithm"
         mc:Ignorable="d"
         Title="Employees"
-        Height="350" Width="auto"
+        Height="350" Width="900"
         SizeChanged="Window_SizeChanged"
         Icon="/Icons/employees.ico">
     <Window.Resources>

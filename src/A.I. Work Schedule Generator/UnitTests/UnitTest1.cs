@@ -22,9 +22,13 @@ namespace UnitTests
         {
             var viewModel1 = new WorkSchedulePredictionViewModel();
             var viewModel2 = new WorkScheduleViewModel();
+            var viewModel3 = new EmployeePreferencesViewModel();
+            var viewModel4 = new EmployeeViewModel();
 
             Assert.Empty(viewModel1.WorkSchedulesPredictions);
             Assert.Empty(viewModel2.WorkSchedules);
+            Assert.Empty(viewModel3.EmployeePreferences);
+            Assert.Empty(viewModel4.Employees);
         }
     }
 }
