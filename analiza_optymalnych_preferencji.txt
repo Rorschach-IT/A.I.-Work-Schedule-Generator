@@ -1,0 +1,39 @@
+Aktualnie = 34 łącznie zmian dla pracowników:
+
+Anna Kowalska => 6
+Jan Nowak => 2
+Marta Wiśniewska => 6
+Piotr Lewandowski => 6
+Katarzyna Dąbrowska => 4
+Tomasz Wójcik => 3
+Agnieszka Kamińska => 6
+Marek Zieliński => 3
+
+----------------------
+DĄŻYMY DO TEGO, ABY:
+----------------------
+
+34: 5 * 8 = 40
+
+Anna Kowalska => 5
+Jan Nowak => 5
+Marta Wiśniewska => 5
+Piotr Lewandowski => 5
+Katarzyna Dąbrowska => 5
+Tomasz Wójcik => 5
+Agnieszka Kamińska => 5
+Marek Zieliński => 5
+
+Ująć:
+Anna Kowalska => 5
+Jan Nowak => 5
+Marta Wiśniewska => 4
+Piotr Lewandowski => 4
+Katarzyna Dąbrowska => 4
+Tomasz Wójcik => 4
+Agnieszka Kamińska => 4
+Marek Zieliński => 4
+
+5 + 5 + 4 + 4 + 4 + 4 + 4 + 4 = 34
+Wtedy mniej więcej będzie po równo zmian dla pracowników.
+
