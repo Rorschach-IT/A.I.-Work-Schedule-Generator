@@ -66,9 +66,7 @@ namespace GeneticAlgorithm.ViewModel
             }
 
             if (workSchedules.Count == 0)
-            {
                 throw new Exception("No data inside work schedules predictions");
-            }
 
             // [*]
             var employeePreferences = new EmployeePreferencesViewModel();
@@ -105,18 +103,23 @@ namespace GeneticAlgorithm.ViewModel
 
             foreach (var prediction in WorkSchedulesPredictions)
             {
-                if (!availabilityPerDay.ContainsKey(prediction.DayOfWeek))
-                    continue;
-
                 var availability = availabilityPerDay[prediction.DayOfWeek];
                 int sum = 0;
 
-                for (int i = 0; i < employees.Count; i++)
+                var sortedIndices = employeesUsed
+                    .Select((count, index) => new { count, index })
+                    .OrderBy(x => x.count)
+                    .ThenBy(x => Guid.NewGuid())
+                    .ToList();
+
+                foreach (var x in sortedIndices)
                 {
+                    int i = x.index;
+
                     if (sum >= prediction.EmployeeIdCount)
                         break;
 
-                    if (employeesUsed[i] >= 6)
+                    if (employeesUsed[i] >= 5)
                         continue;
 
                     if (availability[i] == prediction.ChangeId)
