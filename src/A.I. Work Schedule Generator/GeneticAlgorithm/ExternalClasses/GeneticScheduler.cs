@@ -8,14 +8,17 @@
         private int generations = 100;
         private double mutationRate = 0.05;
 
+        // Main optimization method to find the best optimal schedule
         public List<int> Optimize(List<int> clientCounts, List<string> daysOfWeek)
         {
+            // Initialize the population
             List<List<int>> population = new List<List<int>>();
             for (int i = 0; i < populationSize; i++)
             {
                 population.Add(RandomIndividual(clientCounts.Count));
             }
 
+            // Evolve the population
             for (int gen = 0; gen < generations; gen++)
             {
                 population = population.OrderBy(ind => Fitness(ind, clientCounts, daysOfWeek)).ToList();
@@ -24,6 +27,7 @@
                 newPopulation.Add(population[0]);
                 newPopulation.Add(population[1]);
 
+                // Crossover and mutation
                 while (newPopulation.Count < populationSize)
                 {
                     var parent1 = Select(population, clientCounts, daysOfWeek);
@@ -36,14 +40,17 @@
                 population = newPopulation;
             }
 
+            // Return the best individual
             return population[0];
         }
 
+        // Generate a random individual
         private List<int> RandomIndividual(int size)
         {
             return Enumerable.Range(0, size).Select(_ => random.Next(1, maxEmployees + 1)).ToList();
         }
 
+        // Calculate the fitness of an individual
         private int Fitness(List<int> individual, List<int> clientCounts, List<string> daysOfWeek)
         {
             int totalError = 0;
@@ -65,12 +72,14 @@
             return totalError;
         }
 
+        // Tournament selection
         private List<int> Select(List<List<int>> population, List<int> clientCounts, List<string> daysOfWeek)
         {
             var tournament = population.OrderBy(x => random.Next()).Take(5).ToList();
             return tournament.OrderBy(x => Fitness(x, clientCounts, daysOfWeek)).First();
         }
 
+        // Crossover 50% chance
         private List<int> Crossover(List<int> parent1, List<int> parent2)
         {
             int split = random.Next(parent1.Count);

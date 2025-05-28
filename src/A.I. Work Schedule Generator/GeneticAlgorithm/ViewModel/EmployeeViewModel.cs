@@ -1,8 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using GeneticAlgorithm.Model;
+using GeneticAlgorithm.NVVM;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Text.Json;
-using GeneticAlgorithm.Model;
-using GeneticAlgorithm.NVVM;
 
 namespace GeneticAlgorithm.ViewModel
 {
@@ -19,6 +19,7 @@ namespace GeneticAlgorithm.ViewModel
             }
         }
 
+        // Load employee data from a JSON file => Employee.json
         public void LoadEmployeeData()
         {
             const string fileName = "../../../Data/Employee.json";
@@ -31,7 +32,6 @@ namespace GeneticAlgorithm.ViewModel
 
                 if (employees is not null)
                     Employees = new ObservableCollection<EmployeeModel>(employees);
-                //EmployeeModel = JsonSerializer.Deserialize<EmployeeModel>(jsonString);
             }
             catch (Exception ex) when (ex is FileNotFoundException or JsonException)
             {

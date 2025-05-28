@@ -1,8 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using GeneticAlgorithm.Model;
+using GeneticAlgorithm.NVVM;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Text.Json;
-using GeneticAlgorithm.Model;
-using GeneticAlgorithm.NVVM;
 
 namespace GeneticAlgorithm.ViewModel
 {
@@ -19,6 +19,7 @@ namespace GeneticAlgorithm.ViewModel
             }
         }
 
+        // Load work schedule data from a JSON file => WorkSchedule.json
         public void LoadWorkScheduleData()
         {
             const string fileName = "../../../Data/WorkSchedule.json";

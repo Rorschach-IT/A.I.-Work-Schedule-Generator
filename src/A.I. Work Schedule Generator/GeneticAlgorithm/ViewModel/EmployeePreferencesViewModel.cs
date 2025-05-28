@@ -1,8 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using GeneticAlgorithm.Model;
+using GeneticAlgorithm.NVVM;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Text.Json;
-using GeneticAlgorithm.Model;
-using GeneticAlgorithm.NVVM;
 
 namespace GeneticAlgorithm.ViewModel
 {
@@ -19,6 +19,7 @@ namespace GeneticAlgorithm.ViewModel
             }
         }
 
+        // Load employee preferences data from a JSON file => EmployeePreferences.json
         public void LoadEmployeePreferencesData()
         {
             const string fileName = "../../../Data/EmployeePreferences.json";
